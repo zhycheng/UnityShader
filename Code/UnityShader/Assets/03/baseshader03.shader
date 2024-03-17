@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 Shader "zyc/baseshader03"
 {
     SubShader
@@ -28,14 +30,20 @@ Shader "zyc/baseshader03"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                
 
-               if(v.vertex.x==0.5&&v.vertex.y==0.5&&v.vertex.z==-0.5)
-               {
-                     o.color=   float4(1,0,0,1);
-               }
-               else
-               {
-                o.color=   float4(0,0,1,1);
-               }
+               //if(v.vertex.x==0.5&&v.vertex.y==0.5&&v.vertex.z==-0.5)
+               //{
+               //      o.color=   float4(1,0,0,1);
+               //}
+               //else
+               //{
+               // o.color=   float4(0,0,1,1);
+               //}
+                float4 worldPos=mul(unity_ObjectToWorld,v.vertex)   ;
+                if(worldPos.x>0)
+                  o.color=   float4(1,0,0,1);
+                else
+                     o.color=   float4(0,0,1,1);
+
                 return o;
             }
 
