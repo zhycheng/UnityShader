@@ -57,9 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\01uniform_and_properties_send_value_to_shader\BaseCode.cs" />
+    <Compile Include="Assets\02_transform_use_customer_mvp\BaseCode02.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\01uniform_and_properties_send_value_to_shader\baseshader.shader" />
+    <None Include="Assets\02_transform_use_customer_mvp\baseshader02.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
