@@ -61,8 +61,10 @@
     <Compile Include="Assets\03_vertex_color\BaseCode03.cs" />
     <Compile Include="Assets\01uniform_and_properties_send_value_to_shader\BaseCode.cs" />
     <Compile Include="Assets\05_vertex_pos\BaseCode05.cs" />
+    <Compile Include="Assets\06_vertex_wave\BaseCode06.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\06_vertex_wave\baseshader06.shader" />
     <None Include="Assets\01uniform_and_properties_send_value_to_shader\baseshader.shader" />
     <None Include="Assets\03_vertex_color\baseshader03.shader" />
     <None Include="Assets\02_transform_use_customer_mvp\baseshader02.shader" />
