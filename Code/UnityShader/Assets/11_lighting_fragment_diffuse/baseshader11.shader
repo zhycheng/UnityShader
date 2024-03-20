@@ -39,10 +39,9 @@ Shader "zyc/baseshader11"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.ver =     v.vertex;
+                o.ver =v.vertex;
                 o.nor=v.normal;
                 //float4 wpos=mul(unity_ObjectToWorld,v.vertex);
-
                 //float3 N=v.normal;
                 ////N=mul(float4(N,0),unity_WorldToObject).xyz;
                 ////N=mul(unity_ObjectToWorld,float4(N,0)).xyz;
@@ -76,11 +75,24 @@ Shader "zyc/baseshader11"
 
             fixed4 frag (v2f i) : COLOR
             {
-                //float4 c=UNITY_LIGHTMODEL_AMBIENT;
+                float4 c=UNITY_LIGHTMODEL_AMBIENT;
                 float3 NN=UnityObjectToWorldNormal(i.nor);
                 float3 II=normalize(WorldSpaceLightDir(i.ver));
-                
-                float4 c=_LightColor0*saturate(dot(II,NN));
+                c+=_LightColor0*saturate(dot(II,NN));
+
+                float3 V=normalize(WorldSpaceViewDir(i.ver));
+                float3 H=normalize(II+V);
+                float3 R=2*dot(II,NN) * NN-II;
+                float scale=pow(saturate(dot(V,R)),_shininess);
+                c+=   _LightColor0*    scale;
+
+                float3  wpos=mul(unity_ObjectToWorld,i.ver)            ;
+                c.rgb+=Shade4PointLights(unity_4LightPosX0,unity_4LightPosY0,unity_4LightPosZ0,
+                unity_LightColor[0].rgb,    unity_LightColor[1].rgb,     unity_LightColor[2].rgb,unity_LightColor[3].rgb,
+                unity_4LightAtten0  ,  wpos.xyz,NN );
+
+
+
 
                 return c;
             }

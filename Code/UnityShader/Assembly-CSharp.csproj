@@ -59,14 +59,14 @@
     <Compile Include="Assets\05_vertex_pos\BaseCode05.cs" />
     <Compile Include="Assets\06_vertex_wave\BaseCode06.cs" />
     <Compile Include="Assets\07_lighting_diffuse\BaseCode07.cs" />
+    <Compile Include="Assets\10_lighting_blinn_phong\BaseCode10.cs" />
     <Compile Include="Assets\04_vertex_color_play\BaseCode04.cs" />
     <Compile Include="Assets\02_transform_use_customer_mvp\BaseCode02.cs" />
     <Compile Include="Assets\03_vertex_color\BaseCode03.cs" />
     <Compile Include="Assets\08_lighting_diffuse_and_specular_pointlight\BaseCode09.cs" />
+    <Compile Include="Assets\11_lighting_fragment_diffuse\BaseCode11.cs" />
     <Compile Include="Assets\07_lighting_diffuse_and_pointlight\BaseCode08.cs" />
     <Compile Include="Assets\01uniform_and_properties_send_value_to_shader\BaseCode.cs" />
-    <Compile Include="Assets\10_lighting_blinn_phong\BaseCode10.cs" />
-    <Compile Include="Assets\11_lighting_fragment_diffuse\BaseCode11.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\06_vertex_wave\baseshader06.shader" />
