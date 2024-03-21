@@ -83,6 +83,7 @@
     <None Include="Assets\10_lighting_blinn_phong\baseshader10.shader" />
     <None Include="Assets\12_shadow\baseshader12.shader" />
     <None Include="Assets\04_vertex_color_play\baseshader04.shader" />
+    <None Include="Assets\14_bloom\bloom.shader" />
     <None Include="Assets\07_lighting_diffuse\baseshader07.shader" />
   </ItemGroup>
   <ItemGroup>
