@@ -62,6 +62,7 @@
     <Compile Include="Assets\10_lighting_blinn_phong\BaseCode10.cs" />
     <Compile Include="Assets\04_vertex_color_play\BaseCode04.cs" />
     <Compile Include="Assets\02_transform_use_customer_mvp\BaseCode02.cs" />
+    <Compile Include="Assets\12_shadow\BaseCode12.cs" />
     <Compile Include="Assets\03_vertex_color\BaseCode03.cs" />
     <Compile Include="Assets\08_lighting_diffuse_and_specular_pointlight\BaseCode09.cs" />
     <Compile Include="Assets\11_lighting_fragment_diffuse\BaseCode11.cs" />
@@ -78,6 +79,7 @@
     <None Include="Assets\05_vertex_pos\baseshader05.shader" />
     <None Include="Assets\11_lighting_fragment_diffuse\baseshader11.shader" />
     <None Include="Assets\10_lighting_blinn_phong\baseshader10.shader" />
+    <None Include="Assets\12_shadow\baseshader12.shader" />
     <None Include="Assets\04_vertex_color_play\baseshader04.shader" />
     <None Include="Assets\07_lighting_diffuse\baseshader07.shader" />
   </ItemGroup>
