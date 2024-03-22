@@ -14,6 +14,8 @@ Shader "zyc/base18"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Factor("Factor",Range(1,30))=5
+        _R("R",Range(0,1))=0.5
+        _A("A",Range(0,0.1))=0.01
     }
     SubShader
     {
@@ -29,6 +31,8 @@ Shader "zyc/base18"
             #include "UnityCG.cginc"
             sampler2D _MainTex;
             float _Factor;
+            float _R;
+            float _A;
              // sampler2D unity_Lightmap;
              // float4  unity_LightmapST;
             float4 _MainTex_ST;
@@ -65,7 +69,19 @@ Shader "zyc/base18"
 
                   i.uv+=    0.01*sin(i.uv*3.14*_Factor+_Time.z)  ;
 
-                fixed4 col = tex2D(_MainTex, i.uv);
+
+                float2 uv=i.uv;
+                float dis=distance(uv,float2(0.5,0.5));
+                float scale=0;
+                //if(dis<_R)
+                //{
+                    _A*=saturate(1-dis/_R);
+                     scale =  _A* sin(-dis*3.14*_Factor+_Time.y);
+                     uv=uv+  scale*uv;
+               // }
+
+
+                fixed4 col = tex2D(_MainTex, uv)+float4(1,1,1,1)*saturate(scale)*100;
                 return col;
             }
             ENDCG
