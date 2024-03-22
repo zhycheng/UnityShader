@@ -21,13 +21,7 @@ Shader "zyc/base16"
 
             #include "UnityCG.cginc"
             sampler2D _MainTex;
-            float _tilingX;
-            float _tilingY ;
-            float _offsetX;
-            float _offsetY;
-
-
-
+            float4 _MainTex_ST;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -46,10 +40,7 @@ Shader "zyc/base16"
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv=v.uv;
-                o.uv.x*= _tilingX;
-                o.uv.y*= _tilingY;
-                o.uv.x+=    _offsetX;
-                o.uv.y+=    _offsetY;
+                o.uv=TRANSFORM_TEX(o.uv,_MainTex);
                 return o;
             }
 
