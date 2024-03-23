@@ -58,17 +58,9 @@ Shader "zyc/base19"
             float4 frag (v2f i) : COLOR
             {
                 float2 uv=i.uv;
-                float4 col = tex2D(_MainTex, uv);
-                col +=   tex2D(_MainTex, uv+float2(0,_R));
-                col +=   tex2D(_MainTex, uv+float2(0,-_R));
-                col +=   tex2D(_MainTex, uv+float2(_R,0));
-                col +=   tex2D(_MainTex, uv+float2(-_R,0));
-
-                col +=   tex2D(_MainTex, uv+float2(-_R,_R));
-                col +=   tex2D(_MainTex, uv+float2(_R,_R));
-                col +=   tex2D(_MainTex, uv+float2(-_R,-_R));
-                col +=   tex2D(_MainTex, uv+float2(_R,-_R));
-                col/=9;
+                float dx=ddx(uv.x)*10;
+                float dy=ddy(uv.y)*10;
+                float4 col=tex2D(_MainTex,uv,float2(dx,dx),float2(dy,dy));
                 return col;
             }
             ENDCG
