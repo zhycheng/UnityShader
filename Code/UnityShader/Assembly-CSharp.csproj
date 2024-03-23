@@ -80,6 +80,7 @@
     <None Include="Assets\16_texture\base16.shader" />
     <None Include="Assets\19_blur\base19.shader" />
     <None Include="Assets\02_transform_use_customer_mvp\baseshader02.shader" />
+    <None Include="Assets\20_uv_blend_animation\base20.shader" />
     <None Include="Assets\08_lighting_diffuse_and_specular_pointlight\baseshader09.shader" />
     <None Include="Assets\05_vertex_pos\baseshader05.shader" />
     <None Include="Assets\11_lighting_fragment_diffuse\baseshader11.shader" />

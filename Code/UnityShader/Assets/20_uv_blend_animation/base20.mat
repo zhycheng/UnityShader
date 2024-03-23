@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: rock
-  m_Shader: {fileID: 4800000, guid: 666bc731b4b91b54caa0ed01495e6d2c, type: 3}
+  m_Name: base20
+  m_Shader: {fileID: 4800000, guid: c9a38e9cd4e94754b90802743bc539d9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a025228b3de94a94694bef8a0ca67fd9, type: 3}
+        m_Texture: {fileID: 2800000, guid: e9c94f3604a522946bf67131f070d418, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -69,7 +69,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _R: 0.007
+    - _R: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
