@@ -41,7 +41,7 @@ Shader "zyc/base19"
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-             
+                float z:   TEXCOORD1;
             };
 
 
@@ -51,15 +51,15 @@ Shader "zyc/base19"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv=v.uv;
                 o.uv=TRANSFORM_TEX(o.uv,_MainTex);
-              
+                o.z=mul(unity_ObjectToWorld,v.vertex).z;
                 return o;
             }
 
             float4 frag (v2f i) : COLOR
             {
                 float2 uv=i.uv;
-                float dx=ddx(uv.x)*10;
-                float dy=ddy(uv.y)*10;
+                float dx=ddx(i.z)*10;
+                float dy=ddy(i.z)*10;
                 float4 col=tex2D(_MainTex,uv,float2(dx,dx),float2(dy,dy));
                 return col;
             }
